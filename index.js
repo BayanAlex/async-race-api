@@ -32,9 +32,13 @@ const db = {
     ]
 };
 
+const corsOptions = {
+    origin: 'https://bayanalex.github.io',
+}
+
 const cors = require('cors');
 const server = jsonServer.create();
-server.use(cors());
+server.use(cors(corsOptions));
 const router = jsonServer.router(db);
 const middlewares = jsonServer.defaults();
 
